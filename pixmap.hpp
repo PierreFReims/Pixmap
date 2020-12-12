@@ -18,6 +18,7 @@ private:
   int hauteur;
   pixel * donnees;
   bool avec_alpha;
+  void init(const int largeur, const int hauteur);
 public:
   Pixmap();
   Pixmap(const int largeur, const int hauteur);
@@ -28,7 +29,10 @@ public:
   void convertir_en_gris();
   void effacer(const pixel fond);
   pixel* obtenir_pixels();
+  void blit_on_texture_centered(SDL_Texture* texture, const int texture_lar, const int texture_hau);
+  void blit_on_texture(SDL_Texture* texture, const int x1,const int y1);
   int get_largeur();
+  int get_hauteur();
 };
 
 #endif
