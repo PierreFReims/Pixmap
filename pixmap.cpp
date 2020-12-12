@@ -45,13 +45,14 @@ void Pixmap::convertir_en_gris()
 {
   std::cout << "Conversion en gris" << std::endl;
 }
-
-int main(int argc, char ** argv)
+pixel* Pixmap::obtenir_pixels()
 {
-  (void) argc;
-  (void) argv;
-  Pixmap P(640,640);
-  Pixmap Q(P);
-
-  return 0;
+  return donnees;
 }
+int Pixmap::get_largeur()
+{
+  return largeur;
+}
+
+//g++ pixmap.cpp test.cpp -o pix.out $(pkg-config --cflags --libs sdl2) && ./pix.out
+//g++ -g -DDEBUG -W -Wall -Wextra -O3 pixmap.cpp test.cpp -o pix.out $(pkg-config --cflags --libs sdl2) && ./pix.out

@@ -11,7 +11,6 @@ struct Rectbox
   void setter(const int x1, const int y1, const int x2, const int y2);
 };
 
-
 class Pixmap
 {
 private:
@@ -27,8 +26,9 @@ public:
   ~Pixmap();
 
   void convertir_en_gris();
-  void effacer();
+  void effacer(const pixel fond);
+  pixel* obtenir_pixels();
+  int get_largeur();
 };
 
 #endif
-
