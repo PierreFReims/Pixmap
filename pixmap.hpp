@@ -13,26 +13,28 @@ struct Rectbox
 
 class Pixmap
 {
-private:
-  int largeur;
-  int hauteur;
-  pixel * donnees;
-  bool avec_alpha;
-  void init(const int largeur, const int hauteur);
-public:
-  Pixmap();
-  Pixmap(const int largeur, const int hauteur);
-  Pixmap(const int largeur, const int hauteur, const int couleur_fond);
-  Pixmap(const Pixmap & pix);
-  ~Pixmap();
+  private:
+    int largeur;
+    int hauteur;
+    pixel * donnees;
+    bool avec_alpha;
 
-  void convertir_en_gris();
-  void effacer(const pixel fond);
-  pixel* obtenir_pixels();
-  void blit_on_texture_centered(SDL_Texture* texture, const int texture_lar, const int texture_hau);
-  void blit_on_texture(SDL_Texture* texture, const int x1,const int y1);
-  int get_largeur();
-  int get_hauteur();
+    void init(const int largeur, const int hauteur);
+  public:
+    Pixmap();
+    Pixmap(int const largeur, int const hauteur);
+    Pixmap(int const largeur, int const hauteur, int const couleur_fond);
+    Pixmap(Pixmap const &  pix);
+    ~Pixmap(); 
+
+    void convertir_en_gris();
+    void effacer(pixel const fond);
+    pixel * obtenir_pixels(Pixmap const & pix);
+    int get_largeur();
+    int get_hauteur();
+    pixel * obtenir_pixels();
+    void blit_on_texture_centered(SDL_Texture* const texture, int const texture_lar, int const texture_hau);
+    void blit_on_texture(SDL_Texture* const texture, int const x1, int const y1);
 };
 
 #endif
