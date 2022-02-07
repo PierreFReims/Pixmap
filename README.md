@@ -1,2 +1,2 @@
 # Pixmap
-Pixmap module in C++
+Pixmap module using SDL2 in C++
